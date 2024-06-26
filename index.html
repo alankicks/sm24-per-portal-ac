@@ -46,8 +46,22 @@
     }
 
     .popup-content p {
-      text-align: left;
+      text-align: center;
       margin: 15px 0;
+    }
+
+    .popup-content ol {
+      text-align: left;
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+
+    .popup-content ol li {
+      margin-bottom: 10px;
+    }
+
+    .popup-content ol li::marker {
+      font-weight: bold;
     }
 
     .popup-content button {
@@ -68,24 +82,30 @@
       background-color: #ccc;
       color: #333;
     }
+
+    .footer-text {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #666;
+    }
   </style>
 </head>
 <body>
   <div id="agreement-popup">
     <div class="popup-content">
       <h2>Spilt Milk Perth 2024 Portal</h2>
-      <p>Welcome to the Spilt Milk Perth 2024 Portal.
-      <p>The contents provided herein are confidential and intended for authorised personnel only.</p>
+      <p>Welcome to the Spilt Milk Perth 2024 Portal. This portal contains site plans and documents for managing and planning a major music festival in Australia. The contents provided herein are confidential and intended for authorised personnel only.</p>
       <p>By accessing this portal, you agree to the following terms and conditions:</p>
-      <p>
-        1. You acknowledge that all information contained within this portal is confidential and proprietary.<br>
-        2. You agree not to share, distribute, or disclose any content from this portal without proper authorisation.<br>
-        3. You agree to use the information solely for the purpose of managing and planning the Spilt Milk Perth 2024 festival.<br>
-        4. Any unauthorised use of the content may result in legal action.<br>
-        5. You agree to comply with all applicable laws and regulations regarding the use of this portal.
-      </p>
+      <ol>
+        <li>You acknowledge that all information contained within this portal is confidential and proprietary.</li>
+        <li>You agree not to share, distribute, or disclose any content from this portal without proper authorisation.</li>
+        <li>You agree to use the information solely for the purpose of managing and planning the Spilt Milk Perth 2024 festival.</li>
+        <li>Any unauthorised use of the content may result in legal action.</li>
+        <li>You agree to comply with all applicable laws and regulations regarding the use of this portal.</li>
+      </ol>
       <button id="agree-button">Agree</button>
       <button id="disagree-button">Disagree</button>
+      <div class="footer-text">Kicks Entertainment Events P/L 2024</div>
     </div>
   </div>
 
