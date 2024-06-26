@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Access Control</title>
+  <style>
+    #agreement-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .popup-content button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+      display: none; /* Hide iframe initially */
+    }
+  </style>
+</head>
+<body>
+  <div id="agreement-popup">
+    <div class="popup-content">
+      <h2>Agreement</h2>
+      <p>Please read and agree to the terms to continue using this site.</p>
+      <button id="agree-button">Agree</button>
+      <button id="disagree-button">Disagree</button>
+    </div>
+  </div>
+
+  <iframe id="portal-iframe" src="https://sites.google.com/kicksentertainment.com.au/sm24-perth-home/home"></iframe>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (localStorage.getItem('agreedToTerms')) {
+        document.getElementById('agreement-popup').style.display = 'none';
+        document.getElementById('portal-iframe').style.display = 'block';
+      }
+
+      document.getElementById('agree-button').addEventListener('click', function () {
+        localStorage.setItem('agreedToTerms', 'true');
+        document.getElementById('agreement-popup').style.display = 'none';
+        document.getElementById('portal-iframe').style.display = 'block';
+      });
+
+      document.getElementById('disagree-button').addEventListener('click', function () {
+        window.location.href = 'https://www.google.com';
+      });
+    });
+  </script>
+</body>
+</html>
