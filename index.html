@@ -30,13 +30,6 @@
       padding: 10px 20px;
       font-size: 16px;
     }
-
-    iframe {
-      width: 100%;
-      height: 100vh;
-      border: none;
-      display: none; /* Hide iframe initially */
-    }
   </style>
 </head>
 <body>
@@ -49,19 +42,15 @@
     </div>
   </div>
 
-  <iframe id="portal-iframe" src="https://sites.google.com/kicksentertainment.com.au/sm24-perth-home/home"></iframe>
-
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       if (localStorage.getItem('agreedToTerms')) {
-        document.getElementById('agreement-popup').style.display = 'none';
-        document.getElementById('portal-iframe').style.display = 'block';
+        window.location.href = 'https://your-google-site-url';
       }
 
       document.getElementById('agree-button').addEventListener('click', function () {
         localStorage.setItem('agreedToTerms', 'true');
-        document.getElementById('agreement-popup').style.display = 'none';
-        document.getElementById('portal-iframe').style.display = 'block';
+        window.location.href = 'https://your-google-site-url';
       });
 
       document.getElementById('disagree-button').addEventListener('click', function () {
