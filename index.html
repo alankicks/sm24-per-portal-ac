@@ -5,13 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal Access Control</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #a51f56;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
     #agreement-popup {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -20,23 +31,58 @@
 
     .popup-content {
       background: #fff;
-      padding: 20px;
-      border-radius: 5px;
+      padding: 30px;
+      border-radius: 10px;
       text-align: center;
+      color: #333;
+      max-width: 500px;
+      width: 80%;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .popup-content h2 {
+      margin-top: 0;
+      color: #a51f56;
+    }
+
+    .popup-content p {
+      text-align: left;
+      margin: 15px 0;
     }
 
     .popup-content button {
       margin: 10px;
       padding: 10px 20px;
       font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup-content button#agree-button {
+      background-color: #a51f56;
+      color: #fff;
+    }
+
+    .popup-content button#disagree-button {
+      background-color: #ccc;
+      color: #333;
     }
   </style>
 </head>
 <body>
   <div id="agreement-popup">
     <div class="popup-content">
-      <h2>Agreement</h2>
-      <p>Please read and agree to the terms to continue using this site.</p>
+      <h2>Spilt Milk Perth 2024 Portal</h2>
+      <p>Welcome to the Spilt Milk Perth 2024 Portal. This portal contains site plans and documents for managing and planning a major music festival in Australia. The contents are protected under commercial-in-confidence regulations.</p>
+      <p>By accessing this portal, you agree to the following terms and conditions:</p>
+      <p>
+        1. You acknowledge that all information contained within this portal is confidential and proprietary.<br>
+        2. You agree not to share, distribute, or disclose any content from this portal without proper authorisation.<br>
+        3. You agree to use the information solely for the purpose of managing and planning the Spilt Milk Perth 2024 festival.<br>
+        4. Any unauthorised use of the content may result in legal action.<br>
+        5. You agree to comply with all applicable laws and regulations regarding the use of this portal.
+      </p>
       <button id="agree-button">Agree</button>
       <button id="disagree-button">Disagree</button>
     </div>
@@ -45,7 +91,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       if (localStorage.getItem('agreedToTerms')) {
-        window.location.href = 'https://your-google-site-url';
+        window.location.href = 'https://sites.google.com/kicksentertainment.com.au/sm24-perth-home/home';
       }
 
       document.getElementById('agree-button').addEventListener('click', function () {
